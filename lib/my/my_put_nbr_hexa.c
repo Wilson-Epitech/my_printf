@@ -1,8 +1,8 @@
 /*
 ** MY_PRINTF PROJECT, 2022
-** my_put_nbr_hexa.c
+** my_put_nbr_hexa_adress.c
 ** File description:
-** my_put_nbr_hexa
+** my_put_nbr_hexa_adress
 */
 
 int my_putchar(char c);

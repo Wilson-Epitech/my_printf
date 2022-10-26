@@ -38,6 +38,10 @@ SRC =	my_getnbr.c  		\
 	my_strlowcase.c		\
 	my_put_nbr_unsigned.c	\
 	my_put_nbr_octal.c	\
+	my_put_nbr_hexa.c	\
+	my_put_nbr_hexa_maj.c	\
+	my_put_nbr_binary.c 	\
+	my_put_nbr_hexa_adress.c\
 
 OBJ = 	$(SRC:.c=.o)
 

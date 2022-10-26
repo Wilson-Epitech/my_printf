@@ -14,6 +14,10 @@ int my_strlen(char const *str);
 int my_put_nbr(int nb);
 int my_put_nbr_unsigned(unsigned int nb);
 int my_put_nbr_octal(int nb);
+unsigned long long my_put_nbr_hexa_adress(unsigned long long nb);
+int my_put_nbr_hexa(unsigned nb);
+int my_put_nbr_hexa_maj(unsigned nb);
+int my_put_nbr_binary(unsigned int nb);
 int my_putstr(char const *str);
 int *my_strcpy(char * dest , char const * src);
 int my_putchar(char c);
@@ -51,6 +55,21 @@ int my_printf(const char *format, ...)
             case 'o':
                 my_put_nbr_octal(va_arg(list, int));
                 break;
+            case 'x':
+                my_put_nbr_hexa(va_arg(list, unsigned int));
+                break;
+            case 'X':
+                my_put_nbr_hexa_maj(va_arg(list, unsigned int));
+                break;
+            case 'b':
+                my_put_nbr_binary(va_arg(list, unsigned int));
+                break;
+            case 'p':
+                my_putstr("0x");
+                my_put_nbr_hexa_adress(va_arg(list, unsigned long long));
+                break;
+                /*case 'S':
+                  break; */
 
             }
             i++;
@@ -75,8 +94,17 @@ int main(void)
 {
     int nb = 21;
     char str[8];
-    int nombre = -8;
+    int nombre = 255;
+    int *ptr;
 
+    my_printf("%p\n", &ptr);
+    printf("%p\n", &ptr);
+    
+    my_printf("%b\n", nombre);
+    printf("%b\n", nombre);
+
+    my_printf("%X\n", nombre);
+    printf("%X\n", nombre);
     my_printf("%x\n", nombre);
     printf("%x\n", nombre);
     my_printf("%o\n", nombre);
