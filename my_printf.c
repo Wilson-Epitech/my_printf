@@ -10,7 +10,10 @@
 #include <string.h>
 #include <unistd.h>
 
+int my_strlen(char const *str);
 int my_put_nbr(int nb);
+int my_put_nbr_unsigned(unsigned int nb);
+int my_put_nbr_octal(int nb);
 int my_putstr(char const *str);
 int *my_strcpy(char * dest , char const * src);
 int my_putchar(char c);
@@ -19,7 +22,7 @@ int case2(const char *format, int i, va_list list)
 {
 }
 
-int mini_printf(const char *format, ...)
+int my_printf(const char *format, ...)
 {
     va_list list;
     int i = 0;
@@ -34,14 +37,21 @@ int mini_printf(const char *format, ...)
                 my_putchar((char) va_arg(list, int));
                 break;
             case 'd':
-                my_put_nbr(va_arg(list, int ));
+                my_put_nbr(va_arg(list, int));
                 break;
             case 'i':
-                my_put_nbr(va_arg(list, int ));
+                my_put_nbr(va_arg(list, int));
                 break;
             case '%':
                 my_putchar('%');
                 break;
+            case 'u':
+                my_put_nbr_unsigned(va_arg(list, unsigned int));
+                break;
+            case 'o':
+                my_put_nbr_octal(va_arg(list, int));
+                break;
+
             }
             i++;
         } else
@@ -65,11 +75,15 @@ int main(void)
 {
     int nb = 21;
     char str[8];
+    unsigned int nombre = 8;
 
+    my_printf("%o\n", nombre);
+    my_printf("%u\n", nombre);
+    printf("%u\n", nombre);
     my_strcpy(str, "world");
-    mini_printf("Hello %s\n", str);
-    mini_printf("If you multiplie %d by %d,the result is %i. \n",
+    my_printf("Hello %s\n", str);
+    my_printf("If you multiplie %d by %d,the result is %i. \n",
                 nb, 2, nb * 2);
     my_strcpy(str, "Epitech");
-    mini_printf("The word %%%s%% has %i characters .\n", str ,my_strlen (str));
+    my_printf("The word %%%s%% has %i characters .\n", str ,my_strlen (str));
 }

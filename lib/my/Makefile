@@ -36,6 +36,8 @@ SRC =	my_getnbr.c  		\
 	my_revstr.c		\
 	my_strcpy.c		\
 	my_strlowcase.c		\
+	my_put_nbr_unsigned.c	\
+	my_put_nbr_octal.c	\
 
 OBJ = 	$(SRC:.c=.o)
 
