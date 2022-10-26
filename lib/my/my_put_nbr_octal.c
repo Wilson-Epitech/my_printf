@@ -2,7 +2,7 @@
 ** MY_PRINTF PROJECT, 2022
 ** my_put_nbr_octal.c
 ** File description:
-** 
+** my_put_nbr_octal
 */
 
 int my_putchar(char c);
