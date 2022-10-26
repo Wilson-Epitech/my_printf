@@ -75,7 +75,7 @@ int main(void)
 {
     int nb = 21;
     char str[8];
-    unsigned int nombre = 8;
+    int nombre = -8;
 
     my_printf("%o\n", nombre);
     my_printf("%u\n", nombre);
