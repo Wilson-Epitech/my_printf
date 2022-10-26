@@ -77,6 +77,8 @@ int main(void)
     char str[8];
     int nombre = -8;
 
+    my_printf("%x\n", nombre);
+    printf("%x\n", nombre);
     my_printf("%o\n", nombre);
     my_printf("%u\n", nombre);
     printf("%u\n", nombre);

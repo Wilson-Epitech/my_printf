@@ -7,7 +7,7 @@
 
 int my_putchar(char c);
 
-int my_put_nbr_hexa(int nb)
+int my_put_nbr_hexa(unsigned int nb)
 {
     if (nb >= 0 && nb <= 9){
         my_putchar(nb + '0');
