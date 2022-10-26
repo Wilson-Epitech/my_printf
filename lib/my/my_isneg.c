@@ -5,6 +5,8 @@
 ** task04
 */
 
+int my_putchar(char c);
+
 int my_isneg(int a)
 {
 
