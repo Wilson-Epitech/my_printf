@@ -42,6 +42,7 @@ SRC =	my_getnbr.c  		\
 	my_put_nbr_hexa_maj.c	\
 	my_put_nbr_binary.c 	\
 	my_put_nbr_hexa_adress.c\
+	non_printable_characters.c	\
 
 OBJ = 	$(SRC:.c=.o)
 

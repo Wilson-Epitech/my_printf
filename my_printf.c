@@ -21,6 +21,7 @@ int my_put_nbr_binary(unsigned int nb);
 int my_putstr(char const *str);
 int *my_strcpy(char * dest , char const * src);
 int my_putchar(char c);
+int non_printable_characters(char *str);
 
 int case2(const char *format, int i, va_list list)
 {
@@ -58,7 +59,7 @@ int my_printf(const char *format, ...)
             case 'x':
                 my_put_nbr_hexa(va_arg(list, unsigned int));
                 break;
-            case 'X':
+             case 'X':
                 my_put_nbr_hexa_maj(va_arg(list, unsigned int));
                 break;
             case 'b':
@@ -68,14 +69,15 @@ int my_printf(const char *format, ...)
                 my_putstr("0x");
                 my_put_nbr_hexa_adress(va_arg(list, unsigned long long));
                 break;
-                /*case 'S':
-                  break; */
+            case 'S':
+                non_printable_characters(va_arg(list, char *));
+                break;
 
             }
             i++;
         } else
 	    my_putchar(format[i]);
-        i ++;
+        i++;
 	}
     i++;
     va_end(list);
@@ -93,11 +95,20 @@ int main(void)
 int main(void)
 {
     int nb = 21;
-    char str[8];
-    int nombre = 255;
+    // char str[8];
+    int nombre = 2147448;
     int *ptr;
+    //   char str[] = "hello\t";
 
-    my_printf("%p\n", &ptr);
+    char str [5];
+
+    my_strcpy (str, "toto");
+    str[1] = 127;
+    my_printf ("%S\n", str);
+    
+    //my_printf("%S\n", str);
+
+    /* my_printf("%p\n", &ptr);
     printf("%p\n", &ptr);
     
     my_printf("%b\n", nombre);
@@ -108,6 +119,7 @@ int main(void)
     my_printf("%x\n", nombre);
     printf("%x\n", nombre);
     my_printf("%o\n", nombre);
+    printf("%o\n", nombre);
     my_printf("%u\n", nombre);
     printf("%u\n", nombre);
     my_strcpy(str, "world");
@@ -115,5 +127,5 @@ int main(void)
     my_printf("If you multiplie %d by %d,the result is %i. \n",
                 nb, 2, nb * 2);
     my_strcpy(str, "Epitech");
-    my_printf("The word %%%s%% has %i characters .\n", str ,my_strlen (str));
+    my_printf("The word %%%s%% has %i characters .\n", str ,my_strlen (str)); */
 }
