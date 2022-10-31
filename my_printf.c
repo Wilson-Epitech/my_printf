@@ -20,7 +20,7 @@ int my_put_nbr_hexa_maj(unsigned int nb);
 int my_put_nbr_binary(unsigned int nb);
 int my_putstr(char const *str);
 int *my_strcpy(char * dest , char const * src);
-int my_putchar(char c);
+void my_putchar(char c);
 int non_printable_characters(char *str);
 
 int case3(const char *format, int i, va_list list)
@@ -54,7 +54,7 @@ int case2(const char *format, int i, va_list list)
         my_putstr(va_arg(list, char *));
         break;
     case 'c':
-        my_putchar((char) va_arg(list, int));
+        my_putchar(va_arg(list, int));
         break;
     case 'd':
         my_put_nbr(va_arg(list, int));
@@ -86,6 +86,5 @@ int my_printf(const char *format, ...)
             my_putchar(format[i]);
         i++;
     }
-    i++;
     va_end(list);
 }

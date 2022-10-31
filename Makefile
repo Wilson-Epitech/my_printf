@@ -7,7 +7,7 @@
 
 CC = gcc
 
-SRC = my_printf3.c
+SRC = my_printf_pointers.c
 
 OBJ =   $(SRC:.c=.o)
 
