@@ -5,7 +5,7 @@
 ** my_put_nbr_hexa_adress
 */
 
-int my_putchar(char c);
+void my_putchar(char c);
 
 unsigned long long my_put_nbr_hexa_adress(unsigned long long nb)
 {

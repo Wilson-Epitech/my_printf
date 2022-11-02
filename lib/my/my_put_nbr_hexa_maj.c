@@ -5,7 +5,7 @@
 ** my_put_nbr_hexa_maj
 */
 
-int my_putchar(char c);
+void my_putchar(char c);
 
 int my_put_nbr_hexa_maj(unsigned int nb)
 {
