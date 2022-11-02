@@ -1,0 +1,49 @@
+##
+## MY_PRINTF PROJECT, 2022
+## day10
+## File description:
+## task01 makefile
+##
+
+SRC =	src/my_printf.c 	   		\
+        src/call_flags.c            		\
+	flags/flags_bpsmajo.c      		\
+        flags/flags_scdi.c      		\
+        flags/flags_percentuxxmaj.c  		\
+	lib/my/my_putchar.c			\
+	lib/my/my_put_nbr.c			\
+	lib/my/my_putstr.c			\
+	lib/my/my_strlen.c			\
+	lib/my/my_strcpy.c			\
+	lib/my/my_put_nbr_unsigned.c		\
+	lib/my/my_put_nbr_octal.c		\
+	lib/my/my_put_nbr_hexa.c		\
+	lib/my/my_put_nbr_hexa_maj.c		\
+	lib/my/my_put_nbr_binary.c 		\
+	lib/my/my_put_nbr_hexa_adress.c		\
+	lib/my/non_printable_characters.c
+
+OBJ = 	$(SRC:.c=.o)
+
+NAME = 	libmy.a
+
+##NAME2 = test
+
+all: 	$(NAME)
+
+$(NAME):	$(OBJ)
+	ar rc $(NAME) $(OBJ)
+##	gcc -o $(NAME2) $(OBJ) -L -lmy
+
+clean:
+	$(RM) -f $(OBJ)
+	$(RM) -f *~
+	cd lib/my && $(RM) -f *.o && $(RM) -f *~
+	cd flags && $(RM) -f *.o && $(RM) -f *~
+	cd src && $(RM) -f *.o && $(RM) -f *~
+
+fclean: clean
+	 rm -f $(NAME)
+	 rm -f $(NAME2)
+
+re: fclean all
