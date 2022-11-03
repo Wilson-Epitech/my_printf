@@ -5,11 +5,11 @@
 ## task01 makefile
 ##
 
-SRC =	src/my_printf.c 	   		\
-        src/call_flags.c            		\
-	flags/flags_bpsmajo.c      		\
-        flags/flags_scdi.c      		\
-        flags/flags_percentuxxmaj.c  		\
+SRC =	src/my_printf.c			\
+	src/call_flags.c			\
+	flags/flags_bpsmajo.c			\
+	flags/flags_scdi.c			\
+	flags/flags_percentuxxmaj.c		\
 	lib/my/my_putchar.c			\
 	lib/my/my_put_nbr.c			\
 	lib/my/my_putstr.c			\
@@ -19,17 +19,24 @@ SRC =	src/my_printf.c 	   		\
 	lib/my/my_put_nbr_octal.c		\
 	lib/my/my_put_nbr_hexa.c		\
 	lib/my/my_put_nbr_hexa_maj.c		\
-	lib/my/my_put_nbr_binary.c 		\
+	lib/my/my_put_nbr_binary.c		\
 	lib/my/my_put_nbr_hexa_adress.c		\
 	lib/my/non_printable_characters.c
 
-OBJ = 	$(SRC:.c=.o)
+OBJ =	$(SRC:.c=.o)
 
-NAME = 	libmy.a
+NAME =	libmy.a
 
 ##NAME2 = test
 
-all: 	$(NAME)
+all:	$(NAME)
+
+tests_run:
+		gcc -o unit_tests $(SRC) tests/unit_myprintf.c --coverage -lcriterion
+		./unit_tests
+tests_clean:
+		$(RM) unit_test*
+		cd tests && $(RM) *~
 
 $(NAME):	$(OBJ)
 	ar rc $(NAME) $(OBJ)
@@ -43,7 +50,9 @@ clean:
 	cd src && $(RM) -f *.o && $(RM) -f *~
 
 fclean: clean
-	 rm -f $(NAME)
-	 rm -f $(NAME2)
+	rm -f $(NAME)
+	rm -f $(NAME2)
+	make tests_clean
+	rm -f a.out*
 
 re: fclean all

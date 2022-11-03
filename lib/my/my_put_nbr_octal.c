@@ -7,12 +7,8 @@
 
 void my_putchar(char c);
 
-int my_put_nbr_octal(int nb)
+int my_put_nbr_octal(unsigned int nb)
 {
-    if (nb < 0) {
-            my_putchar('-');
-            nb = nb * (- 1);
-    }
     if (nb >= 0 && nb <= 7){
         my_putchar(nb + '0');
     }

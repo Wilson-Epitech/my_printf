@@ -26,5 +26,5 @@ int flag_smaj(va_list list)
 
 int flag_o(va_list list)
 {
-    my_put_nbr_octal(va_arg(list, int));
+    my_put_nbr_octal(va_arg(list, unsigned int));
 }
