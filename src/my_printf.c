@@ -1,8 +1,8 @@
 /*
 ** MY_PRINTF PROJECT, 2022
-** my_printf_pointers.c
+** my_printf.c
 ** File description:
-** my_printf_pointers
+** my_printf
 */
 
 #include <stdio.h>
