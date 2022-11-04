@@ -8,18 +8,20 @@
 #ifndef FUNC_FLAGS_H
     #define FUNC_FLAGS_H
 
-int flag_b(va_list list);
-int flag_p(va_list list);
-int flag_smaj(va_list list);
-int flag_o(va_list list);
-int flag_s(va_list list);
-int flag_c(va_list list);
-int flag_d(va_list list);
-int flag_i(va_list list);
-int flag_percent(va_list list);
-int flag_u(va_list list);
-int flag_x(va_list list);
-int flag_xmaj(va_list list);
+int flag_b(const char *format, va_list list, int i);
+int flag_p(const char *format, va_list list, int i);
+int flag_smaj(const char *format, va_list list, int i);
+int flag_o(const char *format, va_list list, int i);
+int flag_s(const char *format, va_list list, int i);
+int flag_c(const char *format, va_list list, int i);
+int flag_d(const char *format, va_list list, int i);
+int flag_i(const char *format, va_list list, int i);
+int flag_percent(const char *format, va_list list, int i);
+int flag_u(const char *format, va_list list, int i);
+int flag_x(const char *format, va_list list, int i);
+int flag_xmaj(const char *format, va_list list, int i);
+int flag_f(const char *format, va_list list, int i);
+int flag_n(const char *format, va_list list, int i);
 int structure_call_flags(const char *format, va_list list, int i);
 
 #endif //FUNC_FLAGS.H

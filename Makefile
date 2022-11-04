@@ -5,11 +5,13 @@
 ## task01 makefile
 ##
 
-SRC =	src/my_printf.c			\
+SRC =	func_count.c				\
+	src/my_printf.c				\
 	src/call_flags.c			\
 	flags/flags_bpsmajo.c			\
 	flags/flags_scdi.c			\
 	flags/flags_percentuxxmaj.c		\
+	flags/flags_fn.c			\
 	lib/my/my_putchar.c			\
 	lib/my/my_put_nbr.c			\
 	lib/my/my_putstr.c			\
@@ -18,16 +20,16 @@ SRC =	src/my_printf.c			\
 	lib/my/my_put_nbr_unsigned.c		\
 	lib/my/my_put_nbr_octal.c		\
 	lib/my/my_put_nbr_hexa.c		\
+	lib/my/my_put_nbr_float.c		\
 	lib/my/my_put_nbr_hexa_maj.c		\
 	lib/my/my_put_nbr_binary.c		\
 	lib/my/my_put_nbr_hexa_adress.c		\
-	lib/my/non_printable_characters.c
+	lib/my/non_printable_characters.c	\
+	lib/my/my_put_nbr_size.c		\
 
 OBJ =	$(SRC:.c=.o)
 
 NAME =	libmy.a
-
-##NAME2 = test
 
 all:	$(NAME)
 
@@ -40,7 +42,6 @@ tests_clean:
 
 $(NAME):	$(OBJ)
 	ar rc $(NAME) $(OBJ)
-##	gcc -o $(NAME2) $(OBJ) -L -lmy
 
 clean:
 	$(RM) -f $(OBJ)

@@ -8,22 +8,22 @@
 #include "../includes/my.h"
 #include <stdarg.h>
 
-int flag_s(va_list list)
+int flag_s(const char *format, va_list list, int i)
 {
     my_putstr(va_arg(list, char *));
 }
 
-int flag_c(va_list list)
+int flag_c(const char *format, va_list list, int i)
 {
     my_putchar(va_arg(list, int));
 }
 
-int flag_d(va_list list)
+int flag_d(const char *format, va_list list, int i)
 {
     my_put_nbr(va_arg(list, int));
 }
 
-int flag_i(va_list list)
+int flag_i(const char *format, va_list list, int i)
 {
     my_put_nbr(va_arg(list, int));
 }

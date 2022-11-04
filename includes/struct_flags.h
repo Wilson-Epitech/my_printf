@@ -9,6 +9,6 @@
     #define FLAGS_H_
 typedef struct {
     char c;
-    int (*ptr)(va_list list);
+    int (*ptr)(const char *format, va_list list, int i);
 } structure_t;
 #endif
