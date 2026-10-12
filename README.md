@@ -14,7 +14,7 @@
 
 <p align="center"><img src=".github/assets/term-my_printf.png" alt="my_printf" width="820"/></p>
 
-## En deux mots
+## Le projet en quelques mots
 
 Une réimplémentation de `printf` en C, sans utiliser la libc à part `write` et `malloc`, compilée en bibliothèque statique `libmy.a`.
 
@@ -25,10 +25,6 @@ Une réimplémentation de `printf` en C, sans utiliser la libc à part `write` e
 - Flag `+`
 - Une fonction par spécificateur, choisie dans une table de pointeurs sur fonctions
 - Tests unitaires Criterion
-
-## Sous le capot
-
-La chaîne de format est parcourue caractère par caractère. À chaque `%`, on lit les flags puis le spécificateur, et on appelle le handler correspondant avec `va_arg`.
 
 ## Lancer le projet
 
@@ -43,4 +39,4 @@ gcc main.c -L. -lmy
 
 Wilson Bordichon, Yanis Harkouk
 
-**Ma part :** J'ai fait le **moteur principal** et la gestion des flags, le spécificateur `%S`, et la plupart des **tests unitaires**.
+**Ma partition :** J'ai fait le **moteur principal** et la gestion des flags, le spécificateur `%S`, et la plupart des **tests unitaires**.
