@@ -39,4 +39,4 @@ gcc main.c -L. -lmy
 
 Wilson Bordichon, Yanis Harkouk
 
-**Ma partition :** J'ai fait le **moteur principal** et la gestion des flags, le spécificateur `%S`, et la plupart des **tests unitaires**.
+**Ma partition :** J'ai écrit la majeure partie de la bibliothèque : le **moteur principal**, la gestion des **flags** et des spécificateurs, `%S`, la lib utilitaire et la plupart des **tests unitaires**.
