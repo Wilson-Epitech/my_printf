@@ -29,7 +29,7 @@ Une réimplémentation de `printf` en C, sans utiliser la libc à part `write` e
 ## Lancer le projet
 
 ```bash
-make            # produit libmy.a
+make
 gcc main.c -L. -lmy
 ```
 
